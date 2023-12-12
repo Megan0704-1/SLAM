@@ -39,11 +39,13 @@ int main( int argc, char** argv )
     cout << matrix_23 << endl;
 
     // 用()访问矩阵中的元素
+    cout << "printing matrx_23!\n";
     for (int i=0; i<2; i++) {
         for (int j=0; j<3; j++)
             cout<<matrix_23(i,j)<<"\t";
         cout<<endl;
     }
+    cout << "end matrix_23\n";
 
     // 矩阵和向量相乘（实际上仍是矩阵和矩阵）
     v_3d << 3, 2, 1;
@@ -52,10 +54,10 @@ int main( int argc, char** argv )
     // Eigen::Matrix<double, 2, 1> result_wrong_type = matrix_23 * v_3d;
     // 应该显式转换
     Eigen::Matrix<double, 2, 1> result = matrix_23.cast<double>() * v_3d;
-    cout << result << endl;
+    cout << "result: " << result << endl;
 
     Eigen::Matrix<float, 2, 1> result2 = matrix_23 * vd_3d;
-    cout << result2 << endl;
+    cout << "result2: " << result2 << endl;
 
     // 同样你不能搞错矩阵的维度
     // 试着取消下面的注释，看看Eigen会报什么错
@@ -64,14 +66,15 @@ int main( int argc, char** argv )
     // 一些矩阵运算
     // 四则运算就不演示了，直接用+-*/即可。
     matrix_33 = Eigen::Matrix3d::Random();      // 随机数矩阵
+    cout << "random 3*3 matrix: " << endl;
     cout << matrix_33 << endl << endl;
 
-    cout << matrix_33.transpose() << endl;      // 转置
-    cout << matrix_33.sum() << endl;            // 各元素和
-    cout << matrix_33.trace() << endl;          // 迹
-    cout << 10*matrix_33 << endl;               // 数乘
-    cout << matrix_33.inverse() << endl;        // 逆
-    cout << matrix_33.determinant() << endl;    // 行列式
+    cout << "transpose: " << matrix_33.transpose() << endl;      // 转置
+    cout << "sum: " << matrix_33.sum() << endl;            // 各元素和
+    cout << "trace : " << matrix_33.trace() << endl;          // 迹
+    cout << "10 * every ele: " << 10*matrix_33 << endl;               // 数乘
+    cout << "inverse: " << matrix_33.inverse() << endl;        // 逆
+    cout << "det: " << matrix_33.determinant() << endl;    // 行列式
 
     // 特征值
     // 实对称矩阵可以保证对角化成功
