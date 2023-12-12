@@ -11,3 +11,6 @@ Geometrical meaning of
      linear transformations, a matrix represents a linear mapping from one vector space to another. The transpose of a matrix essentially represents the same linear transformation, but with respect to the dual spaces. 
 5. dot product of u and v:
     the scale that u and v points to the same direction (along the same dimension).
+
+
+Proof of Rodrigue formula [https://youtu.be/q-ESzg03mQc?si=aVt4qKSlFUeJ6Arr]
