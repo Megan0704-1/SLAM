@@ -1,4 +1,4 @@
-##Matrix basic concept:
+## Matrix basic concept:
 
 Geometrical meaning of 
 1. determinant:
