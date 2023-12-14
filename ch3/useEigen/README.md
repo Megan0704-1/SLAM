@@ -1,4 +1,4 @@
-matrix basic concept:
+##Matrix basic concept:
 
 Geometrical meaning of 
 1. determinant:
@@ -12,5 +12,7 @@ Geometrical meaning of
 5. dot product of u and v:
     the scale that u and v points to the same direction (along the same dimension).
 
+formula: 
+$v' = (1-cos(\theta)(v\cdot n) + cos(\theta)v + sin(\theta)(n\times v))$
 
 Proof of Rodrigue formula [https://youtu.be/q-ESzg03mQc?si=aVt4qKSlFUeJ6Arr]
