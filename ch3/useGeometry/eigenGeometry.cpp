@@ -19,6 +19,8 @@ int main ( int argc, char** argv )
     Eigen::AngleAxisd rotation_vector ( M_PI/4, Eigen::Vector3d ( 0,0,1 ) );     //沿 Z 轴旋转 45 度
     cout .precision(3);
     cout<<"rotation matrix =\n"<<rotation_vector.matrix() <<endl;                //用matrix()转换成矩阵
+    cout << "rotation vector.matrix type: " << typeid(rotation_vector.matrix()).name() << "\n";
+    cout << "original rotation matrix type: " << typeid(rotation_matrix).name() << "\n";
     // 也可以直接赋值
     rotation_matrix = rotation_vector.toRotationMatrix();
     // 用 AngleAxis 可以进行坐标变换
@@ -30,12 +32,15 @@ int main ( int argc, char** argv )
     cout<<"(1,0,0) after rotation = "<<v_rotated.transpose()<<endl;
 
     // 欧拉角: 可以将旋转矩阵直接转换成欧拉角
-    Eigen::Vector3d euler_angles = rotation_matrix.eulerAngles ( 2,1,0 ); // ZYX顺序，即roll pitch yaw顺序
+    Eigen::Vector3d euler_angles = rotation_matrix.eulerAngles ( 2,1,0 ); // ZYX顺序，即 yaw-pitch-roll 顺序
     cout<<"yaw pitch roll = "<<euler_angles.transpose()<<endl;
 
     // 欧氏变换矩阵使用 Eigen::Isometry
     Eigen::Isometry3d T=Eigen::Isometry3d::Identity();                // 虽然称为3d，实质上是4＊4的矩阵
+    cout << "Isometry matrix: " << T.matrix() << "\n";
+
     T.rotate ( rotation_vector );                                     // 按照rotation_vector进行旋转
+    cout << "After rotate by z axis: " << T.matrix() << "\n";
     T.pretranslate ( Eigen::Vector3d ( 1,3,4 ) );                     // 把平移向量设成(1,3,4)
     cout << "Transform matrix = \n" << T.matrix() <<endl;
 
