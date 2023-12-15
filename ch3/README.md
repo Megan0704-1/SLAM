@@ -14,3 +14,14 @@ Explained by yt, link[https://www.youtube.com/watch?v=zc8b2Jo7mno]
 
 The key is to find the rotation order of an object with the least chance hitting Gimbal Lock
 > Practice finidng Euler angle representation [https://www.youtube.com/watch?app=desktop&v=8FD1jgb3Df4]
+
+## Quarternions
+Explained by 3b1b, link[https://www.youtube.com/watch?v=d4EgbgTm0Bg]
+
+real number + 3 imaginary parts = 4 hypershere
+we should comprehend the hypershpere in 3 dimensional space as a projection
+E.g. 
+    i*j = k
+    thumb points from origin to i (unit sphere)
+    imagine a circle draw from j
+    scale line with the thumb position meanwhile rotate the point lies on j: reaches k! 
