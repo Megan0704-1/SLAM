@@ -25,3 +25,26 @@ E.g.
     thumb points from origin to i (unit sphere)
     imagine a circle draw from j
     scale line with the thumb position meanwhile rotate the point lies on j: reaches k! 
+
+## Axis-Angle and Quarternion
+1. Axis-Angle
+    - A method represents rotation by a unit vector (rotation axis) and an angle
+    - With a vector $v = (x, y, z)$ as rotation axis, $v$ is a unit vector,
+    - an angle $\theta$ as the rotation regree along with $v$.
+2. Quarternion
+    - $q = w+xi+yj+zk$, where q is quarternion, w is real part
+    - pros: avoid the Gimbal lock problem when using Euler angle representation
+
+3. 1 to 2
+    - Given a angle-axis $(v, \theta)$, and $v = (x, y, z)$ is a unit vector, we can transform it to quarternion representation by the follwoing formula:
+        - $w = cos(\theta/2)$
+        - $x = sin(\theta/2)*v_{x}$
+        - $y = sin(\theta/2)*v_{y}$
+        - $z = sin(\theta/2)*v_{z}$
+4. 2 to 1
+    - GIven a quaternion $q=w+xi+yj+zk$
+    - calculate angle $\theta = 2arccos(w)$
+    - $v=v(v_x, v_y, v_z)$
+    - $v_x = \frac{x}{\sqrt(1-w^2)}$
+    - $v_y = \frac{y}{\sqrt(1-w^2)}$
+    - $v_z = \frac{z}{\sqrt(1-w^2)}$
