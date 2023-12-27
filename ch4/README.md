@@ -13,7 +13,11 @@
     SE(3) is a group consists of all rotation and shift matricies. The matrix can be represented by a 4*4 matrix, which includes a SO(3) rotation matrix and a 3 dimension shifting vector.
 
 2. **qualities**:
-    The representation of SE(3) matrix often are denote as $\begin{pmatrix} R & v \\ 0 & 1 \\ \end{pmatrix}$. 
+    The representation of SE(3) matrix often are denote as
+   $\begin{pmatrix}
+   R & v \\
+   0 & 1 \\
+   \end{pmatrix}$. 
 
-3. **applications**: SE(3) describes rotations and shifts of an object in a 3D space.
+4. **applications**: SE(3) describes rotations and shifts of an object in a 3D space.
 
